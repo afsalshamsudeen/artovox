@@ -1,18 +1,24 @@
 import styled from "styled-components"
 import Avatar from "../assets/man.png";
-import Logo from "../assets/cube.png";
+import Logo from "../assets/art.png";
 import Cred from "../assets/crypto.png";
 import { useState } from "react";
 
-const Container = styled.div``;
+const Container = styled.div`
+  position: sticky;
+  top: 0;
+  z-index: 100;
+`;
 const Wrapper = styled.div`
   display: flex;
   flex: 1;
   align-items: center;
-  justify-items: center;
   justify-content: space-between;
-  gap: 10px;
-  padding-left: 80px;
+  gap: 15px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 80px;
   `;
 const LoginBtn = styled.button`
     font-size: 12px;
@@ -23,6 +29,10 @@ const LoginBtn = styled.button`
     padding: 8px 12px;
     width: 100px;
     cursor: pointer;
+    &:hover {
+    background: #444;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
 `;
 
 const Rwrapper =styled.div`
@@ -31,11 +41,12 @@ const Rwrapper =styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  padding-right: 80px;
+  padding: 0 80px;
   cursor: pointer;
   p{
-      font-weight: 200;
+      font-weight: 300;
       font-size: 14px;
+      margin: 0;
     }
 `;
 
@@ -43,7 +54,7 @@ const Lwrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 5px;
+  gap: 2px;
   cursor: pointer;
   
   `;
@@ -52,7 +63,7 @@ const UserInContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 5px;
   padding-right: 80px;
   div{
     height: 15px;
@@ -60,7 +71,7 @@ const UserInContainer = styled.div`
     border-radius: 40px;
     padding: 12px 15px;
     background-color: #ffffff;
-    box-shadow: 2px 3px 3px #888888;
+    box-shadow: 1px 2px 3px #888888;
     display: flex;
     align-items: center;
     justify-content: space-evenly;

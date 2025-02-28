@@ -1,12 +1,13 @@
 import styled from "styled-components"
 import NavBar from "../components/NavBar";
+import HeroSection from "../components/HeroSection";
 
 const Container = styled.div``;
 const Home = () => {
   return (
     <Container>
         <NavBar/>
-      <h3>Home Page</h3>
+      <HeroSection/>
 
     </Container>
   )
