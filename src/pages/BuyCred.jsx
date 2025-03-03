@@ -1,9 +1,13 @@
+import styled from "styled-components"
+import Offers from "../components/Offers";
 
+
+const Container = styled.div``;
 const BuyCred = () => {
   return (
-    <div>
-      <h1>BuyCredit page</h1>
-    </div>
+    <Container>
+      <Offers/>
+    </Container>
   )
 }
 
