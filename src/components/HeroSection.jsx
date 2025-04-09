@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import Sample_img1 from "../assets/tomato.jpg";
 import Sample_img2 from "../assets/panda.jpg";
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
     display: flex;
@@ -97,13 +98,14 @@ const RandomImages = styled.img`
 `;
 
 const HeroSection = () => {
+  const navigate = useNavigate()
   return (
     <Container>
       <Wrapper>
         <h1 >Turn Text Into  <br /> <span>Anything,</span> in seconds.</h1>
         <p>Unleash your creativity with AI. Transform text into anything—stunning visuals, immersive audio, or even 3D models—in seconds. Just type and watch your ideas come to life.</p>
         <div>
-            <p>Try Artoxox</p><ArrowOutwardIcon/>
+            <p onClick={() => navigate('/prompt')}>Try Artoxox</p><ArrowOutwardIcon/>
         </div>
 
         

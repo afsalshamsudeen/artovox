@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
     display: flex;
@@ -48,12 +49,13 @@ const Container = styled.div`
 
 
 const CustomerTestimonials = () => {
+  const navigator = useNavigate()
   return (
     <Container>
 
       <h1>Start Creating With Artovox</h1>
       <div>
-            <p>Try Artoxox</p><ArrowOutwardIcon/>
+            <p onClick={()=>navigator('/prompt')}>Try Artoxox</p><ArrowOutwardIcon/>
         </div>
     </Container>
   )

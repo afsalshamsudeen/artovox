@@ -10,7 +10,7 @@ const Container = styled.div`
     margin-top: 30px;
     
     div{
-        background-color: #F0F8FF;
+        background-color: #ffffff;
         border-radius: 50px;
         width: 164px;
         height: 43px;
@@ -94,6 +94,8 @@ const Button = styled.button`
     border-radius: 10px;
     align-self: center;
     margin-top: 20px;
+
+    cursor: pointer;
 `;
 
 const Offers = () => {
@@ -104,7 +106,7 @@ const Offers = () => {
       <div>
         <p>OUR PLANS</p>
       </div>
-      <h1>Choose the plan</h1>
+      <h1>Choose a plan</h1>
     </Container>
     <CardWrapper>
 
@@ -124,7 +126,7 @@ const Offers = () => {
 
         <OfferCards>
             <BrandLogo src={Logo}/>
-            <h3>Pro Plan</h3>
+            <h3>Pro Packn</h3>
             <p>For regular users.</p>
             
             <div>

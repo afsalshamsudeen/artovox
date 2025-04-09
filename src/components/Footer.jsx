@@ -12,7 +12,7 @@ const Container  = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 
 `;
 const LWrapper = styled.div`
@@ -20,7 +20,6 @@ const LWrapper = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-left: 80px;
     gap: 10px;
 
     h2{
@@ -36,7 +35,7 @@ const RWrapper = styled.div`
     align-items: center;
     justify-content: center;
     gap: 10px;
-    margin-right: 80px;
+    
 
 `;
 const FooterLogo = styled.img`
@@ -51,21 +50,35 @@ const FooterIcons = styled.img`
     border-radius: 50%;
     border: 1px solid #222;
 `;
+
+const InnerWrapper = styled.div`
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+`;
+
 const Footer = () => {
   return (
     <Container>
+      <InnerWrapper>
+
       <LWrapper>
         <FooterLogo src={Logo}/>
         <h2>Artovox</h2>
         <p>| </p>
         <p>All right reserved. Copyright @artovox</p>
-      </LWrapper>
+        </LWrapper>
 
-      <RWrapper>
+      
+       <RWrapper>
         <FooterIcons src={Instagram}/>
         <FooterIcons src={Twitter}/>
         <FooterIcons src={Linkedin}/>
       </RWrapper>
+      </InnerWrapper>
     </Container>
   )
 }

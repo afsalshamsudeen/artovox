@@ -3,13 +3,24 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { BrowserRouter} from 'react-router-dom'
 import App from './App.jsx'
-import NavBar from './components/NavBar.jsx'
-import Footer from './components/Footer.jsx'
+import styled from 'styled-components'
 
+
+const AppWrapper = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
+const MainContent = styled.main`
+  flex: 1;
+`;
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-  <NavBar/>
+  <AppWrapper>
+  
   <App/>
-  <Footer/>
+  <MainContent/>
+  
+  </AppWrapper>
   </BrowserRouter>,
 )

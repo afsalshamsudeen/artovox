@@ -3,7 +3,7 @@
 const Result = () => {
   return (
     <div>
-      <h1>Result Page</h1>
+      <h1>Prompt Page</h1>
     </div>
   )
 }

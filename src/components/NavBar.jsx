@@ -3,6 +3,7 @@ import Avatar from "../assets/man.png";
 import Logo from "../assets/art.png";
 import Cred from "../assets/crypto.png";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   position: sticky;
@@ -101,11 +102,14 @@ const CredLogo = styled.img`
 const NavBar = () => {
   // eslint-disable-next-line no-unused-vars
   const [user, setUser] = useState(null)
+  const navigate = useNavigate()
   return (
     <Container>
       <Wrapper>
         <Lwrapper>
+          <Link to='/'>
         <AvatarImage logo src={Logo}/>
+          </Link>
         <h2>artovox</h2>
         </Lwrapper>
       {user ? <UserInContainer>
@@ -116,8 +120,8 @@ const NavBar = () => {
         <p>Welcome, Elizabeth</p>
         <AvatarImage src={Avatar}/>
         </UserInContainer> :  <Rwrapper>
-      <p>Pricing</p>
-      <LoginBtn>Login</LoginBtn>
+      <p onClick={()=>navigate('/buycredits')}>Pricing</p>
+      <LoginBtn onClick={()=>navigate('/login')}>Login</LoginBtn>
       </Rwrapper>}
      
 
