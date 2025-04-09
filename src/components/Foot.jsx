@@ -27,6 +27,7 @@ const Container = styled.div`
         align-items: center;
         justify-content: center;
         gap: 5px;
+        margin-bottom: 100px;
       
         padding: 7px 14px;
         cursor: pointer;

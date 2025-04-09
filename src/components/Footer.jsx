@@ -4,16 +4,23 @@ import Logo from "../assets/art.png";
 import Instagram from "../assets/social.png";
 import Twitter from "../assets/twitter.png";
 import Linkedin from "../assets/linkedin.png";
+import { useEffect, useRef, useState } from "react";
 const Container  = styled.div`
     width: 100%;
     height: 40px;
-    margin-top: 100px;
     color: #222;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    
+    transition: transform 0.3s ease;
+    transform: ${({ isHidden }) => (isHidden ? 'translateY(100%)' : 'translateY(0)')};
+    z-index: 10
 `;
 const LWrapper = styled.div`
     display: flex;
@@ -61,8 +68,42 @@ const InnerWrapper = styled.div`
 `;
 
 const Footer = () => {
+  const [isHidden, setIsHidden] = useState(false);
+  const [isAtBottom, setIsAtBottom] = useState(false);
+  const scrollTimeoutRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolledToBottom =
+        window.innerHeight + window.scrollY >= document.body.scrollHeight - 2;
+
+      setIsAtBottom(scrolledToBottom);
+
+      // Show footer if at bottom
+      if (scrolledToBottom) {
+        setIsHidden(false);
+        return; // Don't run timeout
+      }
+
+      // Show while scrolling
+      setIsHidden(false);
+
+      // Hide after 500ms idle
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+      scrollTimeoutRef.current = setTimeout(() => {
+        setIsHidden(true);
+      }, 500);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+    };
+  }, []);
+
   return (
-    <Container>
+    <Container isHidden={isHidden && !isAtBottom} isAtBottom={isAtBottom}>
       <InnerWrapper>
 
       <LWrapper>
